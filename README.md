@@ -38,32 +38,45 @@ This is a simple web application for managing a collection of plants. Users can 
 
 ## Project Structure
 
-The project is organized as follows:
+app.js  
+package.json
 
-```
-├── app.js                  # Main application entry point
-├── package.json            # Project metadata and dependencies
-├── controllers/            # Controller files for handling business logic
-│   └── plantsController.js
-├── public/                 # Static assets (CSS, images, JS)
-│   └── styles/
-│       ├── index-styles.css
-│       ├── plants-styles.css
-│       └── style.css
-├── routes/                 # Route definitions
-│   └── plants.js
-├── services/               # Service files (business logic, data access)
-├── views/                  # Pug templates for server-side rendering
-│   ├── create.pug
-│   ├── edit.pug
-│   ├── index.pug
-│   ├── layout.pug
-│   └── plants.pug
-```
+routes/
+   plants.js
 
-- **app.js**: Main entry point that sets up the Express server and middleware.
-- **controllers/**: Contains controller logic for handling requests and responses.
-- **public/**: Static files served directly to the client (CSS, images, JS).
+controllers/
+   plantsController.js
+
+views/
+   layout.pug
+   index.pug
+   plants.pug
+   create.pug
+   edit.pug
+
+public/
+   styles/
+      style.css
+      index-styles.css
+      plants-styles.css
+
+### Folder and File Descriptions
+
+- **app.js**: Main application entry point; sets up the Express server and middleware.
+- **package.json**: Project metadata and dependencies.
 - **routes/**: Defines application routes and maps them to controllers.
-- **services/**: Contains business logic and data access code (if any).
+  - **plants.js**: Route definitions for plant-related endpoints.
+- **controllers/**: Contains controller logic for handling requests and responses.
+  - **plantsController.js**: Handles business logic for plant operations.
 - **views/**: Pug templates for rendering HTML pages.
+  - **layout.pug**: Base layout template.
+  - **index.pug**: Home or main listing page.
+  - **plants.pug**: Plant list or detail view.
+  - **create.pug**: Form for adding a new plant.
+  - **edit.pug**: Form for editing an existing plant.
+- **public/**: Static files served directly to the client (CSS, images, JS).
+  - **styles/**: CSS stylesheets for the app.
+    - **style.css**: General styles.
+    - **index-styles.css**: Styles specific to the index page.
+    - **plants-styles.css**: Styles specific to plant pages.
+  - **images/**: Image assets (if used).
