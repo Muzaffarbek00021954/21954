@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/styles/style.css")
+    link(rel="stylesheet", href="/styles/index-styles.css")
+    link(rel="stylesheet", href="/styles/create-styles.css")
+    link(rel="stylesheet", href="/styles/plants-styles.css")
+  body
+    header.header-container
+      a.main-navigation-link(href="/") HGA
+      div.navigation-links
+        a.navigation-link(href="/") Home
+        a.navigation-link(href="/plants") Plants
+        a.navigation-link(href="/plants/create") Create
+    main.main-container
+      block content
