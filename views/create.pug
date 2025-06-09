@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  
+  div.create-main-container
+    h2 Add New Plant
+    if errors
+      ul.error-messages
+        each error in errors
+          li= error.msg
+
+    div.create-form-container
+      form.create-form(action="/plants/add", method="POST")
+        label(for="type") Type:
+        input(type="text", name="type", required value=formData && formData.type || '')
+
+        label(for="variety") Variety:
+        input(type="text", name="variety", required value=formData && formData.variety || '')
+
+        label(for="plantingDate") Planting Date:
+        input(type="date", name="plantingDate", required value=formData && formData.plantingDate || '')
+
+        label(for="location") Location:
+        input(type="text", name="location", required value=formData && formData.location || '')
+
+        button.submit-button(type="submit") Add Plant

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  div.text-container
+    p.required-text This web application was created to fulfill Web Technology module’s requirements and does not represent an actual company or service
+  div.latest-plants
+    div.secondary-title
+      p Latest plants
+    div.index-table-container
+      table.index-page-table
+        thead.index-table-thead
+          tr
+            th.table-head Type
+            th.table-head Variety
+            th.table-head Planting Date
+            th.table-head Location
+        tbody
+          each plant in latestPlants
+            tr.index-table-row
+              td.table-data= plant.type
+              td.table-data= plant.variety
+              td.table-data= plant.plantingDate
+              td.table-data= plant.location
+  div.link-text-container
+    a.navigation-link(href="/plants") See more plants

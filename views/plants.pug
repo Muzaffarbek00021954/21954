@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  div.all-plants-main-container
+    div.title-container
+      h2 All Plants
+    div.table-container
+      table.plants-table
+        thead.plants-table-thead
+          tr
+            th.plants-table-head Type
+            th.plants-table-head Variety
+            th.plants-table-head Planting Date
+            th.plants-table-head Location
+            th.plants-table-head Actions
+        tbody
+          each plant in plants
+            tr.plants-table-row
+              td.plants-table-data= plant.type
+              td.plants-table-data= plant.variety
+              td.plants-table-data= plant.plantingDate
+              td.plants-table-data= plant.location
+              td.plants-table-data.action-buttons
+                a.button-edit(href=`/plants/edit/${plant.id}`) Edit
+                form(action=`/plants/delete/${plant.id}`, method="POST", style="display:inline")
+                  button.button-delete(type="submit") Delete
